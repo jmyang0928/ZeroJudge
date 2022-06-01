@@ -4,10 +4,10 @@
 #include<queue>
 using namespace std;
 
-string startNode,endNode;
-vector<int> startIdx(2),endIdx(2),curIdx(2),nextIdx(2);
-queue<vector<int>> qu;
-int mv[10]={1,2,2,1,-1,-2,-2,-1,1,2};
+string startNode,endNode;                                   //startNode:起始座標(輸入資料)。endNode:終點座標(輸入資料)。
+vector<int> startIdx(2),endIdx(2),curIdx(2),nextIdx(2);     //startIdx:起始座標。endIdx:終點座標。curIdx:目前座標。nextIdx:BFS走訪時curIdx下一步的座標。
+queue<vector<int>> qu;                                      //qu:儲存BFS走訪資料。
+int mv[10]={1,2,2,1,-1,-2,-2,-1,1,2};                       //以變數i執行0~7，X軸位置+mv[i]，Y軸位置+mv[i+2]，走訪8個能到達的位置。
 int main(){
     ios_base::sync_with_stdio(false);
     cin.tie(nullptr); cout.tie(nullptr);
@@ -16,7 +16,7 @@ int main(){
         endIdx[0]=endNode[0]-'a'; endIdx[1]=endNode[1]-'1';
         vector<vector<int>> bfs(8,vector<int>(8,-1));
         bfs[startIdx[0]][startIdx[1]]=0;
-        if(startIdx[0]!=endIdx[0] || startIdx[1]!=endIdx[1]){
+        if(startIdx[0]!=endIdx[0] || startIdx[1]!=endIdx[1]){   //若起點等於終點，距離等於0，不須BFS走訪。
             while(!qu.empty()) qu.pop();
             qu.push(startIdx);
             while(true){
