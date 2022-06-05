@@ -11,7 +11,7 @@ int main(){
     ios_base::sync_with_stdio(false);
     cin.tie(nullptr); cout.tie(nullptr);
     cin>>N;
-    cin.ignore();   //cin後使用getline前要加上cin.ignore()。
+    cin.ignore();               //cin後使用getline前要加上cin.ignore()。
     while(N--){
         maxUsage=0;
         vector<int> usage(26,0);
