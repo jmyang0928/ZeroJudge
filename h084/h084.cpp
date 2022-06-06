@@ -4,9 +4,8 @@
 #include<limits.h>
 using namespace std;
 
-int n,k,maxN;
-int cur;
-vector<int> ni,ki;
+int n,k,maxN,cur,imposIdx;          //n:儲存木板個數。k:儲存海報個數。maxN:儲存最高木板高度。cur:二分搜目前的index。
+vector<int> ni,ki;                  //ni:儲存每根木板高度。ki:儲存每張海報寬度。
 bool test(int hight){
     int kIdx=0,conti=0;
     for(int nIdx:ni){
@@ -20,21 +19,24 @@ bool test(int hight){
         }
     }
     if(kIdx==ki.size()) return true;
-    else return false;
+    else{
+        imposIdx=min(imposIdx,hight);
+        return false;
+    }
 }
 int main(){
     ios_base::sync_with_stdio(false);
     cin.tie(nullptr); cout.tie(nullptr);
     while(cin>>n>>k){
-        ni.resize(n); ki.resize(k); maxN=0;
+        maxN=0; imposIdx=INT_MAX; cur=0;
+        ni.resize(n); ki.resize(k);
         for(int i=0;i<n;i++){
             cin>>ni[i];
             maxN=max(maxN,ni[i]);
         }
         for(int i=0;i<k;i++) cin>>ki[i];
-        cur=0;
         for(int jump=maxN/2;jump>0;jump>>=1){
-            while(test(cur+jump)) cur+=jump;
+            while(cur+jump<imposIdx && test(cur+jump)) cur+=jump;
         }
         cout<<cur<<endl;
     }
