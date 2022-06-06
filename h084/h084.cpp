@@ -4,10 +4,10 @@
 #include<limits.h>
 using namespace std;
 
-int n,k,maxN,cur,imposIdx;          //n:儲存木板個數。k:儲存海報個數。maxN:儲存最高木板高度。cur:二分搜目前的index。
+int n,k,maxN,cur,imposIdx;          //n:儲存木板個數。k:儲存海報個數。maxN:儲存最高木板高度。cur:二分搜目前的index。imposIdx:目前試得最小不可行高度。
 vector<int> ni,ki;                  //ni:儲存每根木板高度。ki:儲存每張海報寬度。
-bool test(int hight){
-    int kIdx=0,conti=0;
+bool test(int hight){               //輸入高度，測試是否可行。
+    int kIdx=0,conti=0;             //kIdx:準備要張貼的海報。conti:目前可海報的最大寬度。
     for(int nIdx:ni){
         if(nIdx<hight) conti=0;
         else{
