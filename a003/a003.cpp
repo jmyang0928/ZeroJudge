@@ -1,19 +1,25 @@
-// AC (3ms, 364KB)
+// AC (3ms, 320KB)
 // Author: JMYANG
+// Tag: switch
 
-#include<iostream>
+#include <iostream>
 using namespace std;
-int main(){
-    int M,D;
-    while(cin>>M>>D){
-        if((M*2+D)%3==0){
-            cout<<"普通"<<endl;
-        }
-        else if((M*2+D)%3==1){
-            cout<<"吉"<<endl;
-        }
-        else{
-            cout<<"大吉"<<endl;
+int main()
+{
+    int M, D;
+    while (cin >> M >> D)
+    {
+        switch ((M * 2 + D) % 3)
+        {
+        case 0:
+            cout << "普通" << endl;
+            break;
+        case 1:
+            cout << "吉" << endl;
+            break;
+        case 2:
+            cout << "大吉" << endl;
+            break;
         }
     }
 }
