@@ -1,5 +1,6 @@
 // AC (3ms, 336KB)
 // Author: JMYANG
+
 #include<iostream>
 using namespace std;
 int main(){
