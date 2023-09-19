@@ -14,7 +14,8 @@
         "limits": "cpp",
         "valarray": "cpp",
         "queue": "cpp",
-        "map": "cpp"
+        "map": "cpp",
+        "vector": "cpp"
     },
     "C_Cpp.errorSquiggles": "Disabled",
     "python.pythonPath": "D:\\python\\python.exe"
