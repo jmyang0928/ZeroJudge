@@ -1,11 +1,13 @@
 // AC (3ms, 336KB)
 // Author: JMYANG
 
-#include<iostream>
+#include <iostream>
 using namespace std;
-int main(){
+int main()
+{
     string a;
-    while(cin>>a){
-        cout<<"hello, "<<a<<endl;
+    while (cin >> a)
+    {
+        cout << "hello, " << a << endl;
     }
 }
