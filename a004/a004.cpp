@@ -1,4 +1,4 @@
-// AC (7ms, 312KB)
+// AC (8ms, 336KB)
 // Author: JMYANG
 
 #include <iostream>
@@ -9,15 +9,7 @@ int main()
     int year;
     while (cin >> year)
     {
-        if (year % 400 == 0)
-        {
-            cout << "閏年" << endl;
-        }
-        else if (year % 100 == 0)
-        {
-            cout << "平年" << endl;
-        }
-        else if (year % 4 == 0)
+        if (year % 400 == 0 || (year % 100 != 0 && year % 4 == 0))
         {
             cout << "閏年" << endl;
         }
